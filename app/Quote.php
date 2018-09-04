@@ -7,6 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Quote extends Model
 {
     protected $fillable = [
-        'quote',
+        'author_id', 'quote',
     ];
+
+    protected $hidden = ['author_id'];
+
+    protected $with = ['author:id,name'];
+
+    public function author() {
+        return $this->belongsTo(Author::class);
+    }
 }

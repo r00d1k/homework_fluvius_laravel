@@ -18,6 +18,6 @@ Route::middleware('auth:api')->group(function () {
         return $request->user();
     });
 
-    Route::resource('/quotes', 'QuoteController');
-    Route::resource('/authors', 'AuthorController');
+    Route::resource('/quotes', 'QuoteController')->except(['create', 'edit']);
+    Route::resource('/authors', 'AuthorController')->except(['create', 'edit']);
 });

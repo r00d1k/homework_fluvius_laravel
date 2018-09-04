@@ -9,4 +9,8 @@ class Author extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function quotes() {
+        return $this->hasMany(Quote::class);
+    }
 }
