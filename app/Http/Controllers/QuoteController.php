@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Author;
+use App\Http\Requests\QuoteStoreRequest;
+use App\Http\Requests\QuoteUpdateRequest;
 use App\Quote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -33,10 +35,10 @@ class QuoteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  QuoteStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuoteStoreRequest $request)
     {
         return Quote::create($request->all());
     }
@@ -55,11 +57,11 @@ class QuoteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  QuoteUpdateRequest $request
      * @param  \App\Quote $quote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quote $quote)
+    public function update(QuoteUpdateRequest $request, Quote $quote)
     {
         $quote->update($request->all());
 

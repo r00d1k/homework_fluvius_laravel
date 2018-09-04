@@ -4,6 +4,6 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Quote::class, function (Faker $faker) {
     return [
-        'quote' => $faker->text,
+        'quote_text' => $faker->text,
     ];
 });

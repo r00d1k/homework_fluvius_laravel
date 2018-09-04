@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Author;
+use App\Http\Requests\AuthorStoreRequest;
+use App\Http\Requests\AuthorUpdateRequest;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -20,10 +22,10 @@ class AuthorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  AuthorStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AuthorStoreRequest $request)
     {
         return Author::create($request->all());
     }
@@ -42,11 +44,11 @@ class AuthorController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  AuthorUpdateRequest $request
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(AuthorUpdateRequest $request, Author $author)
     {
         $author->update($request->all());
 

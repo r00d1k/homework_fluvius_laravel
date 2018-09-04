@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Quote extends Model
 {
     protected $fillable = [
-        'author_id', 'quote',
+        'author_id', 'quote_text',
     ];
 
     protected $hidden = ['author_id'];
